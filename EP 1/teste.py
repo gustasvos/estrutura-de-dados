@@ -1,3 +1,5 @@
+# arquivo temporario, so ignora
+
 from random import randint, sample
 
 a = sample(range(1),1)
