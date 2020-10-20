@@ -1,3 +1,6 @@
+from random import randint
+from time import time
+
 def mergesort(v):
     if len(v) <= 1: return v
     else:
@@ -20,13 +23,6 @@ def merge(e, d):
     r += d[j:]
     return r
 
-from random import sample
-v = sample(range(10), 10)
-#v = [5,4,6,3,2,0,1,7]
-print (v)
-v = mergesort(v)
-print (v)
-
 
 #=================================================================
 
@@ -39,12 +35,6 @@ def quicksort(v):
   maiores = [x for x in v if x >  pivô]
   return quicksort(menores) + iguais + quicksort(maiores)
 
-from random import sample
-v = sample(range(10), 10)
-print (v)
-v = quicksort(v)
-print (v)
-
 #==================================================================
 
 def seleção(v):
@@ -55,12 +45,28 @@ def seleção(v):
     v.remove(m)
   return r
 
-from random import sample
-v = sample(range(10), 10)
-print (v)
-v = seleção(v)
-print (v)
-
 
 #==================================================================
 
+# talvez esse seja o for dos testes
+
+x = 0
+lista = []
+start = time()
+for x in range(12):
+    x+=2000
+    print("\nNumero de deregue: ", len(lista))
+    lista+=[randint(0,x) for x in range(2000)]
+    final = time() - start
+    print("Tempo: ", round(final, 3))
+    #quicksort(lista)
+    #mergesort(lista)
+    #seleção(lista)
+    #lista.sort()
+
+def vetor():
+  x = 0
+  lista = []
+  for x in range(12):
+    x+=2000
+    print("\nNumero de deregueloiro: ", len(lista))

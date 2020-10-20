@@ -1,17 +1,20 @@
-# arquivo temporario, so ignora
+from timeit import timeit
+import time
 
-from random import randint, sample
+#print(timeit('''from random import sample
 
-a = sample(range(1),1)
-print(a)
+#a = sample(range(2000),2000)
+#a.sort()''', number=11))
 
-for i in range(20):
-    # qnd i for igual a 2000 adicionar uma lista de 2000 numeros 
-    if i in [9] :
-        a.append(sample(range(5),5))
-    #print(i)
-    else:
-        a.append(randint(1,10))
+#print(timeit('''from random import sample
 
-print(a)
-print(len(a))
+#randomlist = sample(range(2000),2000)
+#randomlist = randomlist + sample(range(randomlist[-1]+2000),2000)''', number=))
+
+from random import sample
+
+randomlist = sample(range(2000),2000)
+start = time.time()
+randomlist = randomlist + sample(range(randomlist[-1]+2000),2000)
+print(time.time() - start)
+print(len(randomlist))
