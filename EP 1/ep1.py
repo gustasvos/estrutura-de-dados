@@ -68,5 +68,10 @@ def vetor():
   x = 0
   lista = []
   for x in range(12):
-    x+=2000
+    x += 2000
     print("\nNumero de deregueloiro: ", len(lista))
+    lista += [randint(0,x) for x in range(2000)]
+    return lista
+
+v1 = vetor()
+print(len(v1))
