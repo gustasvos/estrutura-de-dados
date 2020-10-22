@@ -1,20 +1,21 @@
-from timeit import timeit
-import time
+from random import randint
+from time import time
 
-#print(timeit('''from random import sample
+def seleção(v):
+  r = []
+  while v:
+    m = min(v)
+    r.append(m)
+    v.remove(m)
+  return r
 
-#a = sample(range(2000),2000)
-#a.sort()''', number=11))
-
-#print(timeit('''from random import sample
-
-#randomlist = sample(range(2000),2000)
-#randomlist = randomlist + sample(range(randomlist[-1]+2000),2000)''', number=))
-
-from random import sample
-
-randomlist = sample(range(2000),2000)
-start = time.time()
-randomlist = randomlist + sample(range(randomlist[-1]+2000),2000)
-print(time.time() - start)
-print(len(randomlist))
+x = 0 
+lista = []
+start = time()
+for x in range(12):
+    x+=2000
+    print("\nNumero de deregue: ", len(lista))
+    lista+=[randint(0,x) for x in range(2000)]
+    final = time() - start
+    seleção(lista)
+    print("Tempo: ", round(final, 3))

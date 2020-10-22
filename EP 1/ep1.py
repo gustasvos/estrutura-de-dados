@@ -37,7 +37,7 @@ def quicksort(v):
 
 #==================================================================
 
-def seleção(v):
+def selecao(v):
   r = []
   while v:
     m = min(v)
@@ -50,28 +50,67 @@ def seleção(v):
 
 # talvez esse seja o for dos testes
 
-x = 0
-lista = []
-start = time()
-for x in range(12):
-    x+=2000
-    print("\nNumero de deregue: ", len(lista))
-    lista+=[randint(0,x) for x in range(2000)]
-    final = time() - start
-    print("Tempo: ", round(final, 3))
-    #quicksort(lista)
-    #mergesort(lista)
-    #seleção(lista)
-    #lista.sort()
+# x = 0
+# lista = []
+# start = time()
+# for x in range(12):
+#     x+=2000
+#     print("\nNumero de deregue: ", len(lista))
+#     lista+=[randint(0,x) for x in range(2000)]
+#     final = time() - start
+#     print("Tempo: ", round(final, 3))
+#     #quicksort(lista)
+#     #mergesort(lista)
+#     #seleção(lista)
+#     #lista.sort()
 
-def vetor():
+def vetormergesort():
   x = 0
   lista = []
+  start = time()
   for x in range(12):
     x += 2000
-    print("\nNumero de deregueloiro: ", len(lista))
+    print("\nlen merge: ", len(lista))
     lista += [randint(0,x) for x in range(2000)]
-    return lista
+    mergesort(lista)
+    print(time() - start)
 
-v1 = vetor()
-print(len(v1))
+def vetorquicksort():
+  x = 0
+  lista = []
+  start = time()
+  for x in range(12):
+    x += 2000
+    print("\nlen quick: ", len(lista))
+    lista += [randint(0,x) for x in range(2000)]
+    quicksort(lista)
+    print(time() - start)
+
+def vetorselecao():
+  x = 0
+  lista = []
+  start = time()
+  for x in range(12):
+    x += 2000
+    print("\nlen selec: ", len(lista))
+    lista += [randint(0,x) for x in range(2000)]
+    lista = selecao(lista)
+    print(time() - start)
+
+def vetornativo():
+  x = 0
+  lista = []
+  start = time()
+  for x in range(12):
+    x += 2000
+    print("\nlen nativ: ", len(lista))
+    lista += [randint(0,x) for x in range(2000)]
+    lista.sort()
+    print(time() - start)
+
+v1 = vetormergesort()
+v2 = vetorquicksort()
+v3 = vetorselecao()
+v4 = vetornativo()
+
+#print(len(v1))
